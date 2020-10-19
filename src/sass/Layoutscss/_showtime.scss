@@ -1,0 +1,145 @@
+.showtime{
+    margin: 40px auto;
+    .showtime__title{
+
+    }
+    .heThongRapChieu{
+        .heThongRapChieu__link{
+            margin: 10px 20px;
+            padding:15px;
+            box-shadow: 5px 5px 10px $color-gray-1;
+            border-radius:10px;
+            transition: all .5s;
+            .heThongRapChieu__logo{
+                width: 50px;
+                height: 50px;
+                display: block;
+                &:hover{
+                    animation-name: spin;
+                animation-duration: 1000ms;
+                // animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                }
+            }
+            &:hover{
+                box-shadow: 5px 5px 10px $color-organe-0;
+                
+            }
+            &.active{
+                background-color:$color-white-0;
+                box-shadow: 5px 5px 10px $color-organe-0;
+            }
+        }
+        .cumRap__list{
+            
+            border-left: 1px solid $color-orange-3;
+            overflow-y: scroll;
+            overflow-X: hidden;
+            height: 500px;
+            .cumRap{
+                width: 100%;
+                height: auto;
+                text-align: left;
+                @include styleText($color-organe-0,$fs-1,$fw-bold);
+                transition: all .3s;
+                .cumRap__diaChi{
+                    @include styleText($color-organe-0,$fs-0,$fw-normal);
+                    
+                }
+                &:hover{
+                    color: $color-white-0;
+                    background-color: $color-orange-3;
+                    .cumRap__diaChi{
+                        color: $color-white-0;
+                    }
+                }
+                &.active{
+                    color: $color-white-0;
+                    background-color: $color-orange-3;
+                    .cumRap__diaChi{
+                        color: $color-white-0;
+                    }
+                }
+            }
+            
+        }
+        .danhSachPhim{
+            width: 100%;
+            text-align: left;
+            border-right: 1px solid $color-orange-1;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            scrollbar-face-color: #367CD2;
+            height: 500px;
+            .danhSachPhim__lichChieu{
+                margin: 20px 0;
+                .danhSachPhim__title{
+                    
+                    text-decoration: none;
+                    @include styleText($color-black-2,$fs-1,$fw-bold);
+                    .danhSachPhim__lichChieu__hinhAnh{
+                        display: inline-block;
+                        width:50px;
+                        height: 50px;
+                        margin: 0 15px;
+                    }
+                }
+                .danhSachPhim__gioChieu{
+                    margin: 10px 10px;
+                    .lichChieu__time{
+                        text-align: center;
+                        // background-color: $color-blue-0;
+                        // margin: 15px 5px 0 0;
+                        margin: 15px 0;
+                        width: 100px;
+                        border-radius: 5px;
+                        .lichChieu__booking{
+                            cursor: pointer;
+                            margin: 10px 0;
+                            padding: 10px 30px;
+                            box-shadow: 5px 10px 10px $color-gray-1;
+                            text-decoration: none;
+                            border-radius: 5px;
+                            @include styleText($color-green-0,$fs-1,$fw-bold);
+                            transition: all .3s;
+                            &:hover{
+                                color:$color-orange-3;
+                                box-shadow: 5px 10px 10px $color-orange-3;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    @-ms-keyframes spin { 
+        from { 
+            -ms-transform: rotate(0deg); 
+        } to { 
+            -ms-transform: rotate(360deg); 
+        }
+    }
+    @-moz-keyframes spin { 
+        from { 
+            -moz-transform: rotate(0deg); 
+        } to { 
+            -moz-transform: rotate(360deg); 
+        }
+    }
+    @-webkit-keyframes spin { 
+        from { 
+            -webkit-transform: rotate(0deg); 
+        } to { 
+            -webkit-transform: rotate(360deg); 
+        }
+    }
+    @keyframes spin { 
+        from { 
+            transform: rotate(0deg); 
+        } to { 
+            transform: rotate(360deg); 
+        }
+    }
+}
+

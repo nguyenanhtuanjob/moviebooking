@@ -1,0 +1,105 @@
+footer{
+    background-color: #222;
+    padding-top: 50px;
+    .footer__content{
+        .footer__item{
+            h3{
+                @include styleText($color-white-0,$fs-1,$fw-bold);
+            }
+            .footer__service{
+                
+                
+                a{
+                    @include styleText($color-gray-2,$fs-1,$fw-bold);
+                    text-decoration: none;
+                }
+            }
+            .footer__brand{
+                margin-left: 15px;
+                .footer__row{
+                    display:flex;
+                    margin-bottom: 15px;
+                    .footer__brand-item{
+                        margin-right: 15px;
+                        width:30px;
+                        height: 30px;
+                        border-radius:50%;
+                        
+                        position: relative;
+                        a{
+                            position: absolute;
+                            left: 37%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                            
+                            img{
+                                display: block;
+                                width: 150%;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                    .item-white{
+                        
+                        background-color: $color-white-0;
+                        a{
+                            img{
+                                display: block;
+                                width: 150%;
+                            }
+                        }
+                        
+                    }
+                }
+                
+            }
+            .footer__mobile{
+                img{
+                    display: inline-block;
+                    width:20%;
+                    margin-right: 15px;
+                }
+            }
+            .footer__social{
+                img{
+                    display: inline-block;
+                    width:25%;
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+    hr{
+        background-color:$color-gray-1;
+    }
+    .footer__copyright{
+        .imgFooter{
+            padding-right: 0;
+            
+            img{
+                display:block;
+                width: 100%;
+                border-radius: 12px;
+            }
+        }
+        .infoFooter{
+            padding:0;
+            h3{
+                @include styleText(
+                    $color-white-0,$fs-0,$fw-bold-0);
+            }
+            span{
+                display: block;
+                line-height:1.8;
+                @include styleText(
+                    $color-gray-2,$fs-0,$fw-bold-0);
+            }
+        }
+        .imgCongThuong{
+            img{
+                display:block;
+                width: 100%;
+            }
+        }
+    }
+}

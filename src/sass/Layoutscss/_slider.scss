@@ -1,0 +1,10 @@
+.carousel{
+    position: relative;
+    .carousel__img{
+        width:100%;
+        display:block;
+        background-position: center center;
+        background-attachment: fixed;
+        height: 500px;
+    }
+}

@@ -1,0 +1,38 @@
+@mixin styleText($color,$fs,$fw) {
+    color:$color;
+    font-size:$fs;
+    font-weight:$fw;
+}
+@mixin styleBorder($color){//Tuấn Võ
+    border: 1px solid $color;
+}
+@mixin responsive($screen) {
+    //kiểm tra screen có tồn tại trong breakpoint hay không
+    @if (map-has-key($map: $breakpoints, $key: $screen)) {
+        //Nếu tìm tháy
+        //Lấy giá trị của screen gán vào cho biến value
+        $value: map-get(
+            $map: $breakpoints,
+            $key: $screen,
+        );
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    } @else {
+        @warn 'Screen khong ton tai';
+    }
+}
+// ĐÌNH HẬU 
+@mixin styleText($color,$fs,$fw) {
+    color:$color;
+    font-size:$fs;
+    font-weight:$fw;
+}
+@mixin styleOwl($color,$fs,$fw){
+    position: absolute;
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+    bottom: 200px;
+    padding: 10px;
+}

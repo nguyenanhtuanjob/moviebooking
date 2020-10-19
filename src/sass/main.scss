@@ -1,0 +1,27 @@
+//Helper
+
+@import './Helper/variables';
+@import './Helper/mixin';
+
+//Base
+@import './Base/reset';
+@import './Base/scrollbar';
+
+@import './Base/customize';
+
+//components
+@import './Base/button';
+
+//Layout 
+@import './Layoutscss/header';
+@import './Layoutscss/home';
+@import './Layoutscss/slider';
+@import './Layoutscss/movie';
+@import './Layoutscss/showtime';
+@import './Layoutscss/app';
+@import './Layoutscss/detail';
+@import './Layoutscss/login';
+@import './Layoutscss/signup';
+
+
+@import './Layoutscss/footer';

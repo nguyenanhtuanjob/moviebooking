@@ -1,0 +1,45 @@
+.home__background{
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    .home__dangchieu{
+        
+        a{
+            background-color: transparent;
+            border: none;
+            font-size:$fs-2;
+            transition: all .3s;
+            @include styleText($color-black-1,$fs-5,$fw-bold);
+            position: relative;
+            &::after{
+                display: block;
+                content: '';
+                height: 3px;
+                width: 0%;
+                background-image: linear-gradient(to right,$color-orange-2,$color-orange-3);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: all .5s;
+            }
+            &.active{
+                border: none;
+                color: $color-orange-3;
+                background-color: transparent;
+                font-size:$fs-5;
+                &::after{
+                    width: 100%;
+                }
+            }
+            &:hover{
+                border: none;
+                color: $color-orange-3;
+                background-color: transparent;
+                font-size:$fs-5;
+                &::after{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

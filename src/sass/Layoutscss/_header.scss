@@ -1,0 +1,36 @@
+header {
+    nav {
+        box-shadow: 0 0 3px 0 $color-gray-0;
+        background-color: transparent;
+        .img-brand {
+            width: 60%;
+        }
+
+        #movieNavbar {
+            .navbar-light {
+                .navbar-nav {
+                    .nav-link {
+                        @include styleText($color-black-2, $fs-1, $fw-normal);
+                    }
+                    &:hover {
+                        color: $color-organe-0;
+                    }
+                }
+            }
+            a {
+                @include styleText($color-black-2, $fs-1, $fw-normal);
+                display: flex;
+                align-items: center;
+                transition: all 0.5s;
+                // .icon__login{
+                //     margin-right: $mg-1;
+                //     @include styleText($color-gray-2,$fs-4,$fw-normal);
+                //     border:1px solid $color-orange-3;
+                // }
+                &:hover {
+                    color: $color-orange-3;
+                }
+            }
+        }
+    }
+}
