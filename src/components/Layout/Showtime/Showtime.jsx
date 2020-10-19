@@ -98,7 +98,7 @@ export default function Showtime(props) {
                                                                                 {
                                                                                     phim.lstLichChieuTheoPhim?.map((lichChieu,index)=>{
                                                                                         return <div key={index} className="lichChieu__time col-3">
-                                                                                            <a className="lichChieu__booking" onClick={() => {
+                                                                                            {/* <a className="lichChieu__booking" onClick={() => {
                                                                                                 if(!localStorage.getItem('userLogin')){
                                                                                                     Swal.fire({
                                                                                                         icon: 'error',
@@ -117,10 +117,10 @@ export default function Showtime(props) {
                                                                                                     props.history.push(`/booking/${lichChieu.maLichChieu}`)
                                                                                                 }
                                                                                             }}> {moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}
-                                                                                            </a>
-                                                                                            {/* <NavLink className="lichChieu__booking" to={`/booking/${lichChieu.maLichChieu}`}>
+                                                                                            </a> */}
+                                                                                            <NavLink className="lichChieu__booking" to={`/booking/${lichChieu.maLichChieu}`}>
                                                                                                 {moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}
-                                                                                            </NavLink> */}
+                                                                                            </NavLink>
                                                                                         </div>
                                                                                     })
                                                                                 }
