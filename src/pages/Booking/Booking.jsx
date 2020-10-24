@@ -7,13 +7,11 @@ export default function Booking() {
         return (
             <Container fluid="md" className="booking">
                 <Row>
-                    <Col sm={1}>
-
-                    </Col>
-                    <Col sm={7}>
+                    <Col sm={8}>
                         <div className="booking__screen">
-                            <img src="./img/screen.png" alt="screen.png"/>
+                            <img src="../img/screen.png" alt="screen.png"/>
                         </div>
+                        {/* danh sách ghế */}
                         
                     </Col>
                     <Col sm={4}>
