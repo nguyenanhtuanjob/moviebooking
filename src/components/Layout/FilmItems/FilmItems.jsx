@@ -13,7 +13,7 @@ export default function FilmItems(props) {
               <img className="movie__card__img card-img-top" src={movie.hinhAnh} alt={movie.hinhAnh} onError={(e)=>{
                   e.target.src ="https://picsum.photos/300/300"
               }} />
-              <div className="card__rating">
+              {/* <div className="card__rating">
                 {movie.danhGia}
                 <StarRatings
                     rating={movie.danhGia}
@@ -22,7 +22,7 @@ export default function FilmItems(props) {
                     starSpacing="1px"
                     starRatedColor="#fb4226"
                 />
-                </div>
+                </div> */}
                 {/* <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId={movie.trailer.substrings(30)} onClose={() => setOpen(false)} /> */}
               {/* <button className=" btn btn-success my-2" onClick={()=> setOpen(true)}>VIEW DEMO</button> */}
               <div className="card-body">

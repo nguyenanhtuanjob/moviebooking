@@ -33,7 +33,7 @@
     "sass-loader": "^10.0.2",
     "slick-carousel": "^1.8.1",
     "style-loader": "^1.2.1",
-    "sweetalert2": "^10.6.1",
+    "sweetalert2": "^10.15.7",
     "yup": "^0.29.3"
   },
   "scripts": {
