@@ -3,7 +3,9 @@ import { Button, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { dangKyApiAction } from "../../redux/actions/QuanLyNguoiDungAction";
 import { useHistory } from 'react-router';
+import * as Yup from 'yup';
 // import { Formik,Form,Field} from "formik";
+import { useFormik } from 'formik';
 export default function SignUp() {
   let dispatch = useDispatch();
   const [userSignUp, setUserSignUp] = useState({
@@ -18,12 +20,38 @@ export default function SignUp() {
     const { value, name } = e.target;
     setUserSignUp({ ...userSignUp, [name]: value });
   };
+
+  const formik = useFormik({
+    initialValues:{
+      hoTen: "",
+    userName: "",
+    passWord: "",
+    email: "",
+    soDienThoai: "",
+    maNhom: "GP01",
+    },
+    validationSchema: Yup.object({
+      hoTen : Yup.string().max(50,'Must be 50 characters or less').required('Required'),
+      userName : Yup.string().max(20,'Must be 20 characters or less').required('Required'),
+      passWord: Yup.string().required('Required'),
+      email: Yup.string().email('Invalid email address').required('Required'),
+      maNhom: Yup.string().required('Required')
+    }),
+    onSubmit : values =>{
+      alert(JSON.stringify(values, null, 2))
+    }
+  })
+
   let history = useHistory();
+
+
   const signUp = (e) => {
     e.preventDefault(); //không cho trang load lại
     //call api
     dispatch(dangKyApiAction(userSignUp,history));
   };
+
+
   return (
     <div className="signup">
       <div className="signup__content container">
@@ -31,15 +59,21 @@ export default function SignUp() {
           <div className="col-4">
             <div className="signup__form">
               <h1 className="signup__title">ĐĂNG KÝ</h1>
-              <Form onSubmit={signUp}>
+              <Form onSubmit={formik.handleSubmit}>
                 <Form.Group controlId="formGroupHoTen">
                   <Form.Label>Họ Tên</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Họ Tên"
                     name="hoTen"
-                    onChange={handleChange}
+                    // onChange={handleChange}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.hoTen}
                   />
+                  {formik.touched.hoTen && formik.errors.hoTen ? (
+         <div>{formik.errors.hoTen}</div>
+       ) : null}
                 </Form.Group>
                 <Form.Group controlId="formGroupTaiKhoan">
                   <Form.Label>Tài Khoản</Form.Label>
@@ -47,8 +81,14 @@ export default function SignUp() {
                     type="text"
                     placeholder="Nhập Tài Khoản"
                     name="userName"
-                    onChange={handleChange}
+                    // onChange={handleChange}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.userName}
                   />
+                   {formik.touched.userName && formik.errors.userName ? (
+         <div>{formik.errors.userName}</div>
+       ) : null}
                 </Form.Group>
                 <Form.Group controlId="formGroupMatKhau">
                   <Form.Label>Mật Khẩu</Form.Label>
@@ -56,8 +96,14 @@ export default function SignUp() {
                     type="password"
                     placeholder="Mật Khẩu"
                     name="passWord"
-                    onChange={handleChange}
+                    // onChange={handleChange}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.passWord}
                   />
+                  {formik.touched.passWord && formik.errors.passWord ? (
+         <div>{formik.errors.passWord}</div>
+       ) : null}
                 </Form.Group>
                 <Form.Group controlId="formGroupEmail">
                   <Form.Label>Email</Form.Label>
@@ -65,8 +111,14 @@ export default function SignUp() {
                     type="text"
                     placeholder="Email"
                     name="email"
-                    onChange={handleChange}
+                    // onChange={handleChange}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.email}
                   />
+                  {formik.touched.email && formik.errors.email ? (
+         <div>{formik.errors.email}</div>
+       ) : null}
                 </Form.Group>
                 <Form.Group controlId="formGroupPhone">
                   <Form.Label>Số điện thoại</Form.Label>
@@ -74,12 +126,20 @@ export default function SignUp() {
                     type="text"
                     placeholder="Số điện thoại"
                     name="soDienThoai"
-                    onChange={handleChange}
+                    // onChange={handleChange}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.soDienThoai}
                   />
+                  {formik.touched.soDienThoai && formik.errors.soDienThoai ? (
+         <div>{formik.errors.soDienThoai}</div>
+       ) : null}
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>Mã Nhóm</Form.Label>
-                  <Form.Control as="select" name="maNhom">
+                  <Form.Control as="select" name="maNhom"  onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.maNhom}>
                     <option value="GP01">GP01</option>
                     <option value="GP02">GP02</option>
                     <option value="GP03">GP03</option>
